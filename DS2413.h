@@ -1,3 +1,6 @@
+#ifndef DS2413_H
+#define DS2413_H
+
 #define DS2413_FAMILY_ID 0x3A
 #define DS2413_ACCESS_READ 0xF5
 #define DS2413_ACCESS_WRITE 0x5A
@@ -29,7 +32,6 @@ private:
 
 public:
     DS2413(OneWire *oneWire);
-    ~DS2413();
     void setPinA(uint8_t address[8], uint8_t state)
     {
         uint8_t ack = 0;
@@ -82,6 +84,5 @@ DS2413::DS2413(OneWire *oneWire)
     this->oneWire = oneWire;
 }
 
-DS2413::~DS2413()
-{
-}
+#endif
+
